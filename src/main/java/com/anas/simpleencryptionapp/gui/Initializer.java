@@ -109,13 +109,49 @@ public class Initializer {
 
     private void setupFontAndColors() {
         Font mainFont = new Font("Ink free", Font.BOLD, 20);
+        Color backgroundColor = new Color(0X2041140);
+        Color fontColor = new Color(140, 230, 212);
 
         // Set font for all components
         for (Component c : mainFrame.getComponentsArray()) {
             c.setFont(mainFont);
+            c.setForeground(fontColor);
         }
+        mainFrame.getTextArea().setFont(mainFont);
+        themeRadioButtons(backgroundColor);
+        mainFrame.getKeyFiled().setBackground(new Color(0X1021030));
+
+        setTheTextAreas(fontColor);
+
+        themeTheButtons(backgroundColor);
+
+        // Hacker theme
+        mainFrame.getContentPane().setBackground(backgroundColor);
 
         //Set font for title label
         mainFrame.getTitleLabel().setFont(new Font("Ink free", Font.BOLD, 26));
+    }
+
+    private void setTheTextAreas(Color fontColor) {
+        mainFrame.getTextArea().setBackground(new Color(0X1021030));
+        mainFrame.getTextArea().setForeground(fontColor);
+        mainFrame.getTextArea().setLineWrap(true);
+
+        mainFrame.getProcessedText().setBackground(new Color(0X1021030));
+        mainFrame.getProcessedText().setForeground(fontColor);
+        mainFrame.getProcessedText().setLineWrap(true);
+    }
+
+    private void themeTheButtons(Color backgroundColor) {
+        mainFrame.getProcessButton().setBackground(backgroundColor);
+        mainFrame.getClearButton().setBackground(backgroundColor);
+        mainFrame.getCopyProcessedTextButton().setBackground(backgroundColor);
+    }
+
+    private void themeRadioButtons(Color backgroundColor) {
+        mainFrame.getEncryptRadioButton().setBackground(backgroundColor);
+        mainFrame.getDecryptRadioButton().setBackground(backgroundColor);
+        mainFrame.getEncryptRadioButton().setFocusable(false);
+        mainFrame.getDecryptRadioButton().setFocusable(false);
     }
 }
