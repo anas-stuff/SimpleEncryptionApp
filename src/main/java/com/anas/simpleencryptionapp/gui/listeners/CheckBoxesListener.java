@@ -17,6 +17,7 @@ public class CheckBoxesListener extends AbstractListener implements ItemListener
 
         if (super.getMainFrame().getEncryptCheckBox().equals(source)) {
             super.getMainFrame().getProcessButton().setText("Encrypt");
+            super.getMainFrame().getKeyFiled().setEditable(false);
         } else if (super.getMainFrame().getDecryptCheckBox().equals(source)) {
             super.getMainFrame().getProcessButton().setText("Decrypt");
         }

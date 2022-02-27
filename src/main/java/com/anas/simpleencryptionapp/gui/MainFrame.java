@@ -34,6 +34,7 @@ public class MainFrame extends JFrame {
         this.setupIcon();
         super.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         super.setLayout(null);
+        super.setResizable(false); // Disable resizing (Because I use i3wm :) )
         super.setSize(frameDimension);
         this.addAllComponents();
         super.setLocationRelativeTo(null); // Centered the frame
