@@ -3,12 +3,9 @@ package com.anas.simpleencryptionapp.gui;
 import java.util.*;
 
 public class Mind {
-    private final Random random;
     private final ArrayList<Character> alphabet;
     private ArrayList<Character> shuffleList;
-    private String line;
     private final StringBuilder key, encryptedMessage;
-    private char[] secretLetters;
     private static Mind instance;
 
     public static Mind getInstance() {
@@ -19,7 +16,6 @@ public class Mind {
     }
 
     private Mind() {
-        random = new Random();
         shuffleList = new ArrayList<>();
         alphabet = new ArrayList<>();
         key = new StringBuilder();
@@ -65,8 +61,6 @@ public class Mind {
                 }
             }
         }
-        System.out.println("After: " + secretMessage);
-        System.out.println("Before: " + encryptedMessage);
     }
 
     public String getEncryptedSecretMessage() {
