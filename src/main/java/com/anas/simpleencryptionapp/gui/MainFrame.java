@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
     private JTextField keyFiled;
     private JButton processButton;
     private JButton clearButton;
+    private JButton copyKeyButton;
 
     private final Dimension frameDimension;
 
@@ -63,7 +64,8 @@ public class MainFrame extends JFrame {
                 keyFiled,
                 processedText,
                 processButton,
-                clearButton
+                clearButton,
+                copyKeyButton
         };
     }
 
@@ -75,6 +77,7 @@ public class MainFrame extends JFrame {
         processButton.addActionListener(buttonsListener);
         copyProcessedTextButton.addActionListener(buttonsListener);
         clearButton.addActionListener(buttonsListener);
+        copyKeyButton.addActionListener(buttonsListener);
 
         RadioButtonsListener radioButtonsListener = new RadioButtonsListener(this);
 
@@ -131,6 +134,10 @@ public class MainFrame extends JFrame {
         return frameDimension;
     }
 
+    public JButton getCopyKeyButton() {
+        return copyKeyButton;
+    }
+
     @Override
     public void setTitle(String title) {
         this.title = title;
@@ -175,6 +182,10 @@ public class MainFrame extends JFrame {
 
     protected void setClearButton(JButton clearButton) {
         this.clearButton = clearButton;
+    }
+
+    protected void setCopyKeyButton(JButton copyKeyButton) {
+        this.copyKeyButton = copyKeyButton;
     }
 }
 

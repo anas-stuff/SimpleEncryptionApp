@@ -18,11 +18,16 @@ public class Initializer {
         initKeyFiled();
         initProcessButton();
         initClearButton();
+        initCopyKeyButton();
 
         return this;
     }
 
-  private void initTitleLabel() {
+    private void initCopyKeyButton() {
+        mainFrame.setCopyKeyButton(new JButton("Copy Key"));
+    }
+
+    private void initTitleLabel() {
         mainFrame.setTitleLabel(new JLabel(mainFrame.getTitle()));
     }
 
@@ -99,6 +104,10 @@ public class Initializer {
                         120,
                         mainFrame.getClearButton().getPreferredSize().height);
 
+        mainFrame.getCopyKeyButton().setBounds(270, 490,
+                                160,
+                                        mainFrame.getCopyProcessedTextButton().getPreferredSize().height);
+
         mainFrame.getCopyProcessedTextButton()
                 .setBounds(mainFrame.getFrameDimension().width -
                                 (mainFrame.getCopyProcessedTextButton().getPreferredSize().width + 65),
@@ -145,6 +154,7 @@ public class Initializer {
     private void themeTheButtons(Color backgroundColor) {
         mainFrame.getProcessButton().setBackground(backgroundColor);
         mainFrame.getClearButton().setBackground(backgroundColor);
+        mainFrame.getCopyKeyButton().setBackground(backgroundColor);
         mainFrame.getCopyProcessedTextButton().setBackground(backgroundColor);
     }
 

@@ -21,6 +21,8 @@ public class ButtonsListener extends AbstractListener implements ActionListener 
             clear();
         } else if (super.getMainFrame().getCopyProcessedTextButton().equals(source)) {
             copyProcessedText();
+        } else if (super.getMainFrame().getCopyKeyButton().equals(source)) {
+            copyKey();
         }
     }
 
