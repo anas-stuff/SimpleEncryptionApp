@@ -5,9 +5,9 @@ import com.anas.simpleencryptionapp.gui.MainFrame;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class CheckBoxesListener extends AbstractListener implements ItemListener {
+public class RadioButtonsListener extends AbstractListener implements ItemListener {
 
-    public CheckBoxesListener(MainFrame mainFrame) {
+    public RadioButtonsListener(MainFrame mainFrame) {
         super(mainFrame);
     }
 
@@ -20,6 +20,7 @@ public class CheckBoxesListener extends AbstractListener implements ItemListener
             super.getMainFrame().getKeyFiled().setEditable(false);
         } else if (super.getMainFrame().getDecryptRadioButton().equals(source)) {
             super.getMainFrame().getProcessButton().setText("Decrypt");
+            super.getMainFrame().getKeyFiled().setEditable(true);
         }
     }
 }

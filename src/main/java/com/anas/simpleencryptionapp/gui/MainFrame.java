@@ -1,7 +1,7 @@
 package com.anas.simpleencryptionapp.gui;
 
 import com.anas.simpleencryptionapp.gui.listeners.ButtonsListener;
-import com.anas.simpleencryptionapp.gui.listeners.CheckBoxesListener;
+import com.anas.simpleencryptionapp.gui.listeners.RadioButtonsListener;
 import com.anas.simpleencryptionapp.gui.listeners.MainFrameListener;
 
 import javax.swing.*;
@@ -76,10 +76,10 @@ public class MainFrame extends JFrame {
         copyProcessedTextButton.addActionListener(buttonsListener);
         clearButton.addActionListener(buttonsListener);
 
-        CheckBoxesListener checkBoxesListener = new CheckBoxesListener(this);
+        RadioButtonsListener radioButtonsListener = new RadioButtonsListener(this);
 
-        encryptCheckBox.addItemListener(checkBoxesListener);
-        decryptCheckBox.addItemListener(checkBoxesListener);
+        encryptCheckBox.addItemListener(radioButtonsListener);
+        decryptCheckBox.addItemListener(radioButtonsListener);
     }
 
     @Override
