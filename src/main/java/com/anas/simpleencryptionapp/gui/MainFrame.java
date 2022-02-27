@@ -23,7 +23,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame(String title) {
         this.title = title;
-        frameDimension = new Dimension(570, 600);
+        frameDimension = new Dimension(600, 600);
         new Initializer(this).init().setup(); // Initialize and setup the components
         this.addListeners();
         this.setUpFrame(); // Set Up the frame
@@ -87,11 +87,11 @@ public class MainFrame extends JFrame {
         return this.title;
     }
 
-    public JRadioButton getEncryptCheckBox() {
+    public JRadioButton getEncryptRadioButton() {
         return encryptCheckBox;
     }
 
-    public JRadioButton getDecryptCheckBox() {
+    public JRadioButton getDecryptRadioButton() {
         return decryptCheckBox;
     }
 

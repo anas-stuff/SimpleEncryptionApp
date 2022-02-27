@@ -32,8 +32,8 @@ public class Initializer {
         mainFrame.setEncryptCheckBox(new JRadioButton("Encryption"));
         mainFrame.setDecryptCheckBox(new JRadioButton("Decryption"));
 
-        checkBoxesGroup.add(mainFrame.getEncryptCheckBox());
-        checkBoxesGroup.add(mainFrame.getDecryptCheckBox());
+        checkBoxesGroup.add(mainFrame.getEncryptRadioButton());
+        checkBoxesGroup.add(mainFrame.getDecryptRadioButton());
     }
 
     private void initTextAreaAndScrollPane() {
@@ -70,16 +70,17 @@ public class Initializer {
                 mainFrame.getTitleLabel().getPreferredSize().width,
                 mainFrame.getTitleLabel().getPreferredSize().height);
 
-        mainFrame.getEncryptCheckBox().setBounds(10, 60,
-                120,
-                mainFrame.getEncryptCheckBox().getPreferredSize().height);
+        int radioButtonWidth = 140;
+        mainFrame.getEncryptRadioButton().setBounds(10, 60,
+                radioButtonWidth,
+                mainFrame.getEncryptRadioButton().getPreferredSize().height);
 
-        mainFrame.getEncryptCheckBox().setSelected(true);
+        mainFrame.getEncryptRadioButton().setSelected(true);
 
-        mainFrame.getDecryptCheckBox().setBounds(150, 60,
-                        120, mainFrame.getDecryptCheckBox().getPreferredSize().height);
+        mainFrame.getDecryptRadioButton().setBounds(radioButtonWidth + 10, 60, radioButtonWidth,
+                        mainFrame.getDecryptRadioButton().getPreferredSize().height);
 
-        mainFrame.getKeyFiled().setBounds(380, 60,
+        mainFrame.getKeyFiled().setBounds(390, 60,
                         160,
                         mainFrame.getKeyFiled().getPreferredSize().height);
 

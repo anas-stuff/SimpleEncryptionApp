@@ -25,7 +25,7 @@ public class ButtonsListener extends AbstractListener implements ActionListener 
     }
 
     private void processText() {
-        if (super.getMainFrame().getEncryptCheckBox().isSelected()) {
+        if (super.getMainFrame().getEncryptRadioButton().isSelected()) {
             Mind.getInstance().generateNewKey();
             super.getMainFrame().getKeyFiled().setText(Mind.getInstance().getKey());
             Mind.getInstance().encrypt(super.getMainFrame().getTextArea().getText());

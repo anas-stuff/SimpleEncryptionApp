@@ -15,10 +15,10 @@ public class CheckBoxesListener extends AbstractListener implements ItemListener
     public void itemStateChanged(ItemEvent e) {
         Object source = e.getSource();
 
-        if (super.getMainFrame().getEncryptCheckBox().equals(source)) {
+        if (super.getMainFrame().getEncryptRadioButton().equals(source)) {
             super.getMainFrame().getProcessButton().setText("Encrypt");
             super.getMainFrame().getKeyFiled().setEditable(false);
-        } else if (super.getMainFrame().getDecryptCheckBox().equals(source)) {
+        } else if (super.getMainFrame().getDecryptRadioButton().equals(source)) {
             super.getMainFrame().getProcessButton().setText("Decrypt");
         }
     }
