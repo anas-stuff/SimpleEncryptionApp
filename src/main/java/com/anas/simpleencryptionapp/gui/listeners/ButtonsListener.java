@@ -20,7 +20,7 @@ public class ButtonsListener extends AbstractListener implements ActionListener 
         } else if (super.getMainFrame().getClearButton().equals(source)) {
             clear();
         } else if (super.getMainFrame().getCopyProcessedTextButton().equals(source)) {
-            copy();
+            copyProcessedText();
         }
     }
 
@@ -39,8 +39,20 @@ public class ButtonsListener extends AbstractListener implements ActionListener 
     }
 
     private void clear() {
-
+        // Clear all text areas and text fields
+        super.getMainFrame().getTextArea().setText("");
+        super.getMainFrame().getProcessedText().setText("");
+        super.getMainFrame().getKeyFiled().setText("");
     }
-    private void copy() {
+    private void copyProcessedText() {
+        // Copy processed text to clipboard
+        super.getMainFrame().getProcessedText().selectAll();
+        super.getMainFrame().getProcessedText().copy();
+    }
+
+    private void copyKey() {
+        // Copy key to clipboard
+        super.getMainFrame().getKeyFiled().selectAll();
+        super.getMainFrame().getKeyFiled().copy();
     }
 }
