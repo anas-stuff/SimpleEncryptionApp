@@ -40,6 +40,7 @@ public class Mind {
         for (int i = 0; i < 95; i++) {
            alphabet.add(c++);
         }
+        alphabet.add('\n');
     }
 
     public String getKey() {
