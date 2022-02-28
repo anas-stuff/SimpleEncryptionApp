@@ -44,7 +44,11 @@ public class MainFrame extends JFrame {
     }
 
     private void setupIcon() {
-        // TODO: Set icon
+        try {
+            super.setIconImage(new ImageIcon("src/main/resources/icon.png").getImage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void addAllComponents() {
