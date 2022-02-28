@@ -1,7 +1,7 @@
 package com.anas.simpleencryptionapp.gui.listeners;
 
 import com.anas.simpleencryptionapp.gui.MainFrame;
-import com.anas.simpleencryptionapp.gui.Mind;
+import com.anas.simpleencryptionapp.Mind;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
