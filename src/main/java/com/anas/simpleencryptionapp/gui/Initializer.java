@@ -48,6 +48,7 @@ public class Initializer {
 
     private void intProcessedText() {
         mainFrame.setProcessedText(new JTextArea());
+        mainFrame.setProcessedTextScrollPane(new JScrollPane());
         mainFrame.setCopyProcessedTextButton(new JButton("Copy"));
     }
 
@@ -67,7 +68,7 @@ public class Initializer {
     protected void setup() {
         setupFontAndColors();
         setupBounds();
-        mainFrame.getProcessedText().setEditable(false);
+        mainFrame.getProcessedTextTextArea().setEditable(false);
     }
 
     private void setupBounds() {
@@ -93,7 +94,7 @@ public class Initializer {
         mainFrame.getTextAreaScrollPane().setBounds(10, 100,
                         mainFrame.getFrameDimension().width - 30, 220);
 
-        mainFrame.getProcessedText().setBounds(10, 330,
+        mainFrame.getProcessedTextScrollPane().setBounds(10, 330,
                         mainFrame.getFrameDimension().width - 30, 150);
 
         mainFrame.getProcessButton().setBounds(10, 490,
@@ -126,11 +127,10 @@ public class Initializer {
             c.setFont(mainFont);
             c.setForeground(fontColor);
         }
-        mainFrame.getTextArea().setFont(mainFont);
         themeRadioButtons(backgroundColor);
         mainFrame.getKeyFiled().setBackground(new Color(0X1021030));
 
-        setTheTextAreas(fontColor);
+        setTheTextAreas(mainFont, fontColor);
 
         themeTheButtons(backgroundColor);
 
@@ -141,14 +141,17 @@ public class Initializer {
         mainFrame.getTitleLabel().setFont(new Font("Ink free", Font.BOLD, 26));
     }
 
-    private void setTheTextAreas(Color fontColor) {
+    private void setTheTextAreas(Font font, Color fontColor) {
         mainFrame.getTextArea().setBackground(new Color(0X1021030));
+        mainFrame.getTextArea().setFont(font);
         mainFrame.getTextArea().setForeground(fontColor);
         mainFrame.getTextArea().setLineWrap(true);
+        mainFrame.getTextArea().setCaretColor(fontColor);
 
-        mainFrame.getProcessedText().setBackground(new Color(0X1021030));
-        mainFrame.getProcessedText().setForeground(fontColor);
-        mainFrame.getProcessedText().setLineWrap(true);
+        mainFrame.getProcessedTextTextArea().setBackground(new Color(0X1021030));
+        mainFrame.getProcessedTextTextArea().setFont(font);
+        mainFrame.getProcessedTextTextArea().setForeground(fontColor);
+        mainFrame.getProcessedTextTextArea().setLineWrap(true);
     }
 
     private void themeTheButtons(Color backgroundColor) {

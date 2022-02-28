@@ -31,9 +31,9 @@ public class ButtonsListener extends AbstractListener implements ActionListener 
             Mind.getInstance().generateNewKey();
             super.getMainFrame().getKeyFiled().setText(Mind.getInstance().getKey());
             Mind.getInstance().encrypt(super.getMainFrame().getTextArea().getText());
-            super.getMainFrame().getProcessedText().setText(Mind.getInstance().getEncryptedSecretMessage());
+            super.getMainFrame().getProcessedTextTextArea().setText(Mind.getInstance().getEncryptedSecretMessage());
         } else {
-            super.getMainFrame().getProcessedText().setText(
+            super.getMainFrame().getProcessedTextTextArea().setText(
                  Mind.getInstance().decrypt(
                          super.getMainFrame().getTextArea().getText(),
                          super.getMainFrame().getKeyFiled().getText()));
@@ -43,13 +43,13 @@ public class ButtonsListener extends AbstractListener implements ActionListener 
     private void clear() {
         // Clear all text areas and text fields
         super.getMainFrame().getTextArea().setText("");
-        super.getMainFrame().getProcessedText().setText("");
+        super.getMainFrame().getProcessedTextTextArea().setText("");
         super.getMainFrame().getKeyFiled().setText("");
     }
     private void copyProcessedText() {
         // Copy processed text to clipboard
-        super.getMainFrame().getProcessedText().selectAll();
-        super.getMainFrame().getProcessedText().copy();
+        super.getMainFrame().getProcessedTextTextArea().selectAll();
+        super.getMainFrame().getProcessedTextTextArea().copy();
     }
 
     private void copyKey() {

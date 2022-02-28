@@ -14,6 +14,7 @@ public class MainFrame extends JFrame {
     private JTextArea textArea;
     private JScrollPane textAreaScrollPane;
     private JTextArea processedText;
+    private JScrollPane processedTextScrollPane;
     private JButton copyProcessedTextButton;
     private JTextField keyFiled;
     private JButton processButton;
@@ -50,6 +51,7 @@ public class MainFrame extends JFrame {
         for (Component component : this.getComponentsArray()) {
             super.add(component);
         }
+        processedTextScrollPane.setViewportView(processedText);
     }
 
     public Component[] getComponentsArray() {
@@ -59,7 +61,7 @@ public class MainFrame extends JFrame {
                 decryptCheckBox,
                 titleLabel,
                 textAreaScrollPane,
-                processedText,
+                processedTextScrollPane,
                 copyProcessedTextButton,
                 keyFiled,
                 processedText,
@@ -110,8 +112,11 @@ public class MainFrame extends JFrame {
         return textAreaScrollPane;
     }
 
-    public JTextArea getProcessedText() {
+    public JTextArea getProcessedTextTextArea() {
         return processedText;
+    }
+    public JScrollPane getProcessedTextScrollPane() {
+        return  processedTextScrollPane;
     }
 
     public JButton getCopyProcessedTextButton() {
@@ -166,6 +171,10 @@ public class MainFrame extends JFrame {
 
     protected void setProcessedText(JTextArea processedText) {
         this.processedText = processedText;
+    }
+
+    protected void setProcessedTextScrollPane(JScrollPane processedTextScrollPane) {
+        this.processedTextScrollPane = processedTextScrollPane;
     }
 
     protected void setCopyProcessedTextButton(JButton copyProcessedTextButton) {
